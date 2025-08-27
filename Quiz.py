@@ -1,3 +1,22 @@
+#Lists storing the question info
+question_1 = ["Første spørsmål: Hva er hovedstaden i Norge? ","oslo"] 
+question_2 = ["Hva heter Norges nest største by? ","bergen"]
+question_3 = ["Hva heter det beste fotballaget i Bergen? ","brann"]
+
+#List storing the responses
+respsons = ["Det er riktig! Godt jobbet :)", "Beklager, men det er feil svar."]
+
+poeng = 0
+
+#Handles what happens when the answer is right
+def right_answer():
+    print(respsons[0])
+    poeng +=1
+
+#Handles what happens when the answer is wrong
+def wrong_answer():
+    print(respsons[1])
+
 def start_spill():
     """"
     Kjører quiz spillet
@@ -11,31 +30,28 @@ def start_spill():
     poeng = 0
 
     #Stiller første spørsmål
-    svar1 = input("Første spørsmål: Hva er hovedstaden i Norge? ")
+    svar1 = input(question_1[0])
     #Sjekker om det er rett og gir 1 poeng hvis det er det
-    if svar1.lower() == "oslo":
-        print("Det er riktig! Godt jobbet :)")
-        poeng +=1
+    if svar1.lower() == question_1[1]:
+        right_answer()
     else:
-        print("Beklager, men det er feil svar.")
+        wrong_answer()
 
     #Stiller andre spørsmål
-    svar2 = input("Hva heter Norges nest største by? ")
+    svar2 = input(question_2[0])
     #Sjekker om det er rett og gir 1 poeng hvis det er det
-    if svar2.lower() =="bergen":
-        print("Det er riktig! Godt jobbet :)")
-        poeng +=1
+    if svar2.lower() ==question_2[1]:
+        right_answer()
     else:
-        print("Beklager, men det er feil svar.")
+        wrong_answer()
 
     #Stiller andre spørsmål
-    svar3 = input("Hva heter det beste fotballaget i Bergen? ")
+    svar3 = input(question_3[0])
     #Sjekker om det er rett og gir 1 poeng hvis det er det
-    if svar3.lower() == "brann":
-        print("Det er riktig! Godt jobbet :)")
-        poeng +=1
+    if svar3.lower() == question_3[1]:
+        right_answer()
     else:
-        print("Beklager, men det er feil svar.")
+        wrong_answer()
 
     #Sier hvordan du gjorde det
     print(f"Gratulerer {navn}! Du fikk {poeng} poeng!")
