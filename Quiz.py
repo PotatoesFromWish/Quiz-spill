@@ -4,18 +4,19 @@ question_2 = ["Hva heter Norges nest største by? ","bergen"]
 question_3 = ["Hva heter det beste fotballaget i Bergen? ","brann"]
 
 #List storing the responses
-respsons = ["Det er riktig! Godt jobbet :)", "Beklager, men det er feil svar."]
+respsons_questions = ["Det er riktig! Godt jobbet :)", "Beklager, men det er feil svar."]
+respons_score = ["Godt jobbet! Du fikk full pott :)", "Nokså bra jobbet. Nesten alt riktig :)","Du fikk 1 poeng riktig. Neste gang klarer du nok mer :)","Du fikk ingen riktige, men du har forhåpetligvis lært litt :)"]
 
 poeng = 0
 
 #Handles what happens when the answer is right
 def right_answer():
-    print(respsons[0])
+    print(respsons_questions[0])
     poeng +=1
 
 #Handles what happens when the answer is wrong
 def wrong_answer():
-    print(respsons[1])
+    print(respsons_questions[1])
 
 def start_spill():
     """"
@@ -57,13 +58,13 @@ def start_spill():
     print(f"Gratulerer {navn}! Du fikk {poeng} poeng!")
     #Sjekker hvor mange poeng du fikk og gir deg en rett respons
     if poeng == 3:
-        print("Godt jobbet! Du fikk full pott :)")
+        print(respons_score[0])
     elif poeng == 2:
-        print("Nokså bra jobbet. Nesten alt riktig :)")
+        print(respons_score[1])
     elif poeng == 1:
-        print("Du fikk 1 poeng riktig. Neste gang klarer du nok mer :)")
+        print(respons_score[2])
     elif poeng == 0:
-        print("Du fikk ingen riktige, men du har forhåpetligvis lært litt :)")
+        print(respons_score[3])
 
 
 #Gjør at spillet starter på nytt etter du er ferdig
